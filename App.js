@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from "react";
+
+import { store } from "./redux/store";
+import { Provider } from "react-redux";
+import Routes from "./Routes";
+import { extendTheme, NativeBaseProvider } from "native-base";
+
+const newColorTheme = {
+  brand: {
+    900: "#8287af",
+    800: "#7c83db",
+    700: "#b3bef6",
+    500: "#050A58",
+  },
+};
+const theme = extendTheme({ colors: newColorTheme });
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <NativeBaseProvider theme={theme}>
+        <Routes />
+      </NativeBaseProvider>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

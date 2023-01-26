@@ -1,0 +1,34 @@
+
+
+
+SHA1 Fingerprint for preview eas.json  AB:BB:85:4C:FB:AD:0E:AE:06:2D:00:57:B2:B5:E1:16:D3:9D:E8:34
+expoClientId: "37852602861-9b65o6e1uec8m9vh4jvj0posgc9aa0ka.apps.googleusercontent.com",
+iosClientId: "37852602861-inca2co76dffg9lpko0l08mr44ltn2pg.apps.googleusercontent.com",
+androidClientId: "37852602861-2pa6rk4dufqk76918l7htqbkj1k5fthb.apps.googleusercontent.com",
+
+
+standalone app
+apk 
+
+eas build -p android --profile preview
+
+adb usb
+
+    adb install apk
+
+view log 
+npx react-native log-android
+
+
+
+to generate android folders run 
+expo run:android // no problem if there is an error 
+
+run yarn and re_run the project again with 
+npx expo start
+
+# REACT_APP_API_DEV=https://jsonplaceholder.typicode.com
+# REACT_APP_API_PRODUCTION=https://jsonplaceholder.typicode.com
+
+REACT_APP_API_DEV=https://ch1.recrutement.demo.elastic-solutions.com/api
+REACT_APP_API_PRODUCTION=https://ch1.recrutement.demo.elastic-solutions.com/api
